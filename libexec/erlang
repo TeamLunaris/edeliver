@@ -182,6 +182,7 @@ erlang_get_and_update_deps() {
       else
         echo \"rebar and rebar3 for mix was built already\"
       fi
+      APP=\"$APP\" MIX_ENV=\"$TARGET_MIX_ENV\" $MIX_CMD archive.install github hexpm/hex tag v2.0.2 --force
       APP=\"$APP\" MIX_ENV=\"$TARGET_MIX_ENV\" $MIX_CMD deps.get --only $TARGET_MIX_ENV
     fi
   "
